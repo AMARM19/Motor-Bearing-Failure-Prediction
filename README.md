@@ -11,7 +11,9 @@ Two models:
 
 The project includes the full analysis notebook, a **Flask** API, a **Streamlit** UI, and Docker/Render deployment.
 
-**Live demo:** _added after deployment_
+**Live demo** (Render free tier; the first visit after ~15 minutes idle takes up to a minute to wake up):
+- UI: https://bearing-fault-ui.onrender.com
+- API: https://bearing-fault-api.onrender.com/health
 
 ## Results
 
