@@ -1,0 +1,8 @@
+data/raw
+data/phone
+notebooks
+reports
+tests
+.git
+**/__pycache__
+.pytest_cache

@@ -1,0 +1,6 @@
+model,Random window split (leaky),LOLO,LOSO
+"Baseline: LogReg, time-domain only",0.839,0.825,0.587
+"LogReg, generic features",0.997,0.999,0.537
+"LogReg, generic + physics",1.0,0.999,0.684
+"Random forest, generic + physics",1.0,0.979,0.638
+"XGBoost, generic + physics",1.0,0.947,0.699

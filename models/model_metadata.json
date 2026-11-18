@@ -1,0 +1,150 @@
+{
+  "model": "LogReg, generic + physics",
+  "classes": [
+    "Normal",
+    "Inner race",
+    "Ball",
+    "Outer race"
+  ],
+  "feature_names": [
+    "rms",
+    "std",
+    "peak",
+    "p2p",
+    "kurtosis",
+    "skewness",
+    "crest",
+    "shape",
+    "impulse",
+    "margin",
+    "spectral_centroid",
+    "spectral_kurtosis",
+    "env_kurtosis",
+    "band_00",
+    "band_01",
+    "band_02",
+    "band_03",
+    "band_04",
+    "band_05",
+    "band_06",
+    "band_07",
+    "band_08",
+    "band_09",
+    "band_10",
+    "band_11",
+    "band_12",
+    "band_13",
+    "band_14",
+    "band_15",
+    "env_band_00",
+    "env_band_01",
+    "env_band_02",
+    "env_band_03",
+    "env_band_04",
+    "env_band_05",
+    "env_band_06",
+    "env_band_07",
+    "env_band_08",
+    "env_band_09",
+    "env_band_10",
+    "env_band_11",
+    "env_band_12",
+    "env_band_13",
+    "env_band_14",
+    "env_band_15",
+    "snr_bpfi",
+    "snr_bpfo",
+    "snr_bsf",
+    "rel_bpfi",
+    "rel_bpfo",
+    "rel_bsf"
+  ],
+  "sample_rate_hz": 12000,
+  "window_samples": 6000,
+  "default_rpm": 1797,
+  "bearing": "SKF 6205-2RS (CWRU drive end)",
+  "trained_on": "CWRU 12 kHz drive-end, 40 recordings, loads 0-3 hp, fault sizes 0.007/0.014/0.021 in",
+  "validation": {
+    "leave_one_load_out_acc": 0.999,
+    "leave_one_size_out_acc": 0.684,
+    "per_fold": [
+      {
+        "scheme": "Random window split (leaky)",
+        "fold": "-",
+        "acc": 1.0,
+        "f1": ""
+      },
+      {
+        "scheme": "LOLO",
+        "fold": "load 0",
+        "acc": 0.997,
+        "f1": 0.998
+      },
+      {
+        "scheme": "LOLO",
+        "fold": "load 1",
+        "acc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "scheme": "LOLO",
+        "fold": "load 2",
+        "acc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "scheme": "LOLO",
+        "fold": "load 3",
+        "acc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "scheme": "LOSO",
+        "fold": "size 0.007\"",
+        "acc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "scheme": "LOSO",
+        "fold": "size 0.014\"",
+        "acc": 0.447,
+        "f1": 0.494
+      },
+      {
+        "scheme": "LOSO",
+        "fold": "size 0.021\"",
+        "acc": 0.604,
+        "f1": 0.626
+      }
+    ]
+  },
+  "baseline_detector": {
+    "[0, 1, 2, 3]": {
+      "false alarm, load 0": 0.0,
+      "false alarm, load 1": 0.017,
+      "false alarm, load 2": 0.0,
+      "false alarm, load 3": 0.0,
+      "detected 0.007\"": 1.0,
+      "detected 0.014\"": 1.0,
+      "detected 0.021\"": 1.0
+    },
+    "[0, 1, 2]": {
+      "false alarm, load 0": 0.0,
+      "false alarm, load 1": 0.0,
+      "false alarm, load 2": 0.0,
+      "false alarm, load 3": 0.017,
+      "detected 0.007\"": 1.0,
+      "detected 0.014\"": 1.0,
+      "detected 0.021\"": 1.0
+    },
+    "[1, 2, 3]": {
+      "false alarm, load 0": 1.0,
+      "false alarm, load 1": 0.008,
+      "false alarm, load 2": 0.0,
+      "false alarm, load 3": 0.0,
+      "detected 0.007\"": 1.0,
+      "detected 0.014\"": 1.0,
+      "detected 0.021\"": 1.0
+    }
+  }
+}
